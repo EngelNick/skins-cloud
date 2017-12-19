@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>pay_form.page.title</title>
+  <link href="skins-cloud.css" rel="stylesheet"></head>
+  <body>
+    <h1 class="header"></h1>
+    <div class="decline"><span class="close"></span>
+      <p class="decline-title"></p>
+      <p class="decline-text"></p>
+    </div>
+    <form novalidate="true" name="pay_form" action="http://localhost:3000">
+      <div class="card_number">
+        <label for="card_number-input">Card number</label>
+        <div class="input-block">
+          <input id="card_number-input" type="tel" name="pay_form[card_number]" placeholder="0000 0000 0000 0000" maxlength="30" value=""><span class="validation-icon"></span><span class="tooltip-icon"></span>
+          <div class="tooltip"></div>
+          <p class="error-text">pay_form.attributes.card_number.error</p>
+          <p class="description"></p>
+        </div>
+      </div>
+      <div class="expiry-date">
+        <label for="card_exp_month-input">Expiry date</label>
+        <div class="input-block">
+          <div class="card_exp_month">
+            <label for="card_exp_month-input">Card exp month</label>
+            <div class="input-block">
+              <input id="card_exp_month-input" type="tel" name="pay_form[card_exp_month]" placeholder="MM" maxlength="2" value=""><span class="validation-icon"></span><span class="tooltip-icon"></span>
+              <div class="tooltip"></div>
+              <p class="error-text">pay_form.attributes.card_exp_month.error</p>
+              <p class="description"></p>
+            </div>
+          </div><span class="date-separator">/</span>
+          <div class="card_exp_year">
+            <label for="card_exp_year-input">Card exp year</label>
+            <div class="input-block">
+              <input id="card_exp_year-input" type="tel" name="pay_form[card_exp_year]" placeholder="YY" maxlength="4" value=""><span class="validation-icon"></span><span class="tooltip-icon"></span>
+              <div class="tooltip"></div>
+              <p class="error-text">pay_form.attributes.card_exp_year.error</p>
+              <p class="description"></p>
+            </div>
+          </div><span class="validation-icon"></span><span class="tooltip-icon"></span>
+          <div class="tooltip"></div>
+          <p class="error-text"></p>
+          <p class="description"></p>
+        </div>
+      </div>
+      <div class="card_holder">
+        <label for="card_holder-input">Name on card</label>
+        <div class="input-block">
+          <input id="card_holder-input" name="pay_form[card_holder]" placeholder="John Johnson"><span class="validation-icon"></span><span class="tooltip-icon"></span>
+          <div class="tooltip"></div>
+          <p class="error-text">pay_form.attributes.card_holder.error</p>
+          <p class="description"></p>
+        </div>
+      </div>
+      <div class="card_cvv">
+        <label for="card_cvv-input">Security number</label>
+        <div class="input-block">
+          <input id="card_cvv-input" type="tel" name="pay_form[card_cvv]" placeholder="1234" maxlength="4" value=""><span class="validation-icon"></span><span class="tooltip-icon"></span>
+          <div class="tooltip"></div>
+          <p class="error-text">pay_form.attributes.card_cvv.error</p>
+          <p class="description">Os 3 dígitos do número nas costas do seu cartão</p>
+        </div>
+      </div>
+      <input id="pay_form_checkSum" type="hidden" name="pay_form[checkSum]" value="9d3101821da39b5e9064ac0fb45c6f035767f95b">
+      <button>Pay</button><span class="cost"></span>
+    </form><input type="hidden" id="signedpay-purchase-status-url" value="{{ url('form_status', {"token": order.payFormToken}) }}" />
+    <div class="card-brands"><i class="verve"></i><i class="visa"></i><i class="master-card"></i><i class="maestro"></i><i class="american-express"></i><i class="jcb"></i><i class="diners-club"></i><i class="discover"></i><i class="aura"></i><i class="elo"></i><i class="hiper-card"></i></div>
+    <div class="secure-info"></div>
+    <script>
+      function handleInputFocus(focus) {
+          var date_exp = document.getElementById('card-exp-date-combined');
+          date_exp.className = date_exp.className.replace('focused', '');
+          if (focus) {
+              date_exp.className += 'focused';
+          }
+      }
+    </script>
+  <script type="text/javascript" src="skins-cloud.js"></script><script type="text/javascript" src="js/main.js"></script></body>
+</html>
