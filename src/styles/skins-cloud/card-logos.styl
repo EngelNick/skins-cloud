@@ -1,0 +1,34 @@
+logo($name)
+    background url("../../img/" + $name + ".png") no-repeat center/contain
+
+
+.visa
+    display inline-block
+    height 28px
+    padding 0 2em
+    background url("../../img/visa-vb.png") no-repeat center/contain
+    margin-right .2em
+
+$card-logo
+    display inline-block
+    height 26px
+    padding 0 1.5em
+
+    &:not(:last-child)
+        margin-right .2em
+
+card-logo($card-name)
+    .{$card-name}
+        @extend $card-logo
+        logo($card-name)
+
+
+$cards =  "master-card", "maestro", "american-express"
+
+for $card in $cards
+    card-logo($card)
+
+.card-brands
+    padding 1em 0
+    text-align center
+    position relative

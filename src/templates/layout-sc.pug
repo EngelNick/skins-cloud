@@ -1,0 +1,42 @@
+doctype html
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1, maximum-scale=1")
+        title pay_form.page.title
+    body
+
+        h1.header
+
+        .decline
+            span.close
+            p.decline-title
+            p.decline-text
+
+        block form
+
+        <input type="hidden" id="signedpay-purchase-status-url" value="{{ url('form_status', {"token": order.payFormToken}) }}" />
+
+        .card-brands
+            i.verve
+            i.visa
+            i.master-card
+            i.maestro
+            i.american-express
+            i.jcb
+            i.diners-club
+            i.discover
+            i.aura
+            i.elo
+            i.hiper-card
+
+        .secure-info
+
+        script.
+            function handleInputFocus(focus) {
+                var date_exp = document.getElementById('card-exp-date-combined');
+                date_exp.className = date_exp.className.replace('focused', '');
+                if (focus) {
+                    date_exp.className += 'focused';
+                }
+            }

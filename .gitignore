@@ -4,11 +4,3 @@ build
 
 npm-debug.log
 
-/src/styles/*
-/src/templates/*
-
-!/src/styles/example/
-!/src/templates/example/
-!/src/styles/common.styl
-!/src/templates/form.pug
-!/src/templates/layout.pug

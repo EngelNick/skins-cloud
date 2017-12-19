@@ -1,0 +1,248 @@
+@import "colors"
+
+body
+  font-size 16px
+  background-color #1a1826
+  //background-color #441252
+  font-family Arial, Helvetica, sans-serif
+  width 40em
+  margin 0 auto
+  position relative
+
+$control-group
+  display block
+  min-height 2.5em
+  margin-bottom 5px
+
+form
+  background #483f76
+  box-shadow: 0 0 38px 15px rgba(138, 30, 142, 0.24);
+  border-radius 20px;
+  width 420px;
+  margin 0 auto;
+  padding 23px 18px;
+  margin 0 auto
+  position relative
+  font-size .875em
+
+label
+  display inline-block
+  width 8em
+  margin-right .5em
+  padding .65em 0
+
+  color $label-color
+
+  vertical-align top
+  font-size 1em
+
+input
+select
+  height 2.5em
+  padding .65em 1.5em .65em .55em
+  width 100%
+
+  border-radius 2px
+  border 1px solid $input-border-color
+  box-sizing border-box
+  box-shadow $input-border-normal-focus-shadow
+
+  &:active,
+  &:focus
+    box-shadow $input-border-normal-focus-shadow
+    outline 0
+
+.error input
+.error select
+  border 1px solid $error-text-color
+  box-shadow $input-border-focus-error-shadow
+
+input
+  background-color #1a1826;
+  font-style italic
+
+button
+  height 2.6em
+  width 10.4em
+  margin 0.4em 0 -20px 6.65em
+  padding 0
+
+  background $submit-button-color
+  border 0
+  border-bottom 3px solid $submit-button-border-color
+  cursor pointer
+  box-sizing border-box
+  color $white
+  border-radius 5px
+
+  text-align center
+  text-transform uppercase
+  font-weight 700
+  font-size 1.3em
+  line-height 2.6em
+
+  outline none
+
+  &:hover
+    background darken($submit-button-color, 10%)
+    border-bottom 3px solid darken($submit-button-border-color, 10%)
+  &:active
+    background darken($submit-button-color, 10%)
+    border-bottom 0
+    border-top 3px solid darken($submit-button-border-color, 10%)
+
+  &[disabled]
+    background $submit-button-disabled-color
+    cursor default
+
+.header {
+  text-align center
+  position relative
+  font-size 1.2em
+  margin .67em 0 15px 0
+  color greenyellow
+}
+
+.input-block
+  position relative
+  display inline-block
+  width 69%
+  max-width 19.5em
+
+.validation-icon
+  position absolute
+  height .7em
+  width @height
+  top .85em
+  right 1em
+
+.error.dirty .validation-icon
+  background url("../../img/error-icon.png") no-repeat center/contain
+
+.valid.dirty .validation-icon
+  background url("../../img/valid-icon.png") no-repeat center/contain
+
+.card_cvv .tooltip-icon
+  display inline-block
+  vertical-align middle
+  width 1.8em
+  height @width
+  position absolute
+  left 100%
+  top 0
+  cursor pointer
+
+  line-height 0
+  color transparent
+
+  padding .3em .5em
+
+.tooltip-icon:hover ~ .tooltip
+  display block
+
+.tooltip
+  position absolute
+  bottom 0
+  left 145%
+
+  display none
+  min-width 13em
+  min-height 6em
+  background $white url(img/cvv-hint.jpg) no-repeat center / 175px auto
+  border-radius 5px
+  box-shadow: 0 0 5px 0 rgba(4, 4, 4, 0.059)
+  padding 10px
+  box-sizing border-box
+  z-index 15
+
+.card_cvv .tooltip-icon:before
+  content '?'
+  display block
+
+  width 100%
+  height @width
+  color $white
+  background $tooltip-background
+
+  font-weight 700
+  line-height 1.8em
+  text-align center
+
+
+.error-text
+  display none
+  position absolute
+  top 100%
+  left 0
+
+  width 100%
+  min-width 14em
+  padding .3em 0
+  margin 0
+
+  color $error-text-color
+
+  font-size .825em
+  line-height 1
+  text-align left
+
+.error.dirty
+  .error-text
+    display block
+
+.card_number
+.card_holder
+.expiry-date
+.card_cvv
+.cpf
+.dni
+.personal_id
+.address
+.city
+.zip_code
+.state
+.card_pin
+  @extend $control-group
+
+.card_cvv .input-block
+  width 6.5em
+
+.card_exp_month
+.card_exp_year
+  display inline-block
+  width 45%
+  max-width 5.6em
+  margin-right .3em
+
+  & .input-block
+    width 100%
+
+.decline.visible
+  display block
+.decline
+  display none
+  width 190px
+  position absolute
+  top 188px
+  left 413px
+  padding 7px 45px 8px 12px
+  border-radius 4px
+  box-sizing border-box
+  border 1px solid $error-text-color
+  background #fbecea
+  font-size 1em
+  font-weight 700
+  color $error-text-color
+  text-align left
+
+  .close
+    position absolute
+    top 8px
+    right 8px
+    width 16px
+    height 16px
+    background url('img/close.png') no-repeat
+    cursor pointer
+
+select
+  background $white
