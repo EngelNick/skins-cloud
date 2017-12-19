@@ -53,6 +53,7 @@
   },
   "dependencies": {
     "fast-luhn": "^1.0.3",
+    "loader-utils": "^1.1.0",
     "lodash": "^4.6.1",
     "node-romanization": "0.0.5",
     "spin": "0.0.1",
