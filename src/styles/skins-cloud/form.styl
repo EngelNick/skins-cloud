@@ -5,7 +5,7 @@ body
   background-color #1a1826
   //background-color #441252
   font-family Arial, Helvetica, sans-serif
-  width 40em
+  //width 40em
   margin 0 auto
   position relative
 
@@ -16,7 +16,7 @@ $control-group
 
 form
   background #483f76
-  box-shadow: 0 0 38px 15px rgba(138, 30, 142, 0.24);
+  box-shadow: 0 0 19px 7px rgba(138, 30, 142, 0.24);
   border-radius 20px;
   width 420px;
   margin 0 auto;
@@ -101,7 +101,7 @@ button
   position relative
   font-size 1.2em
   margin .67em 0 15px 0
-  color greenyellow
+  color $submit-button-color
 }
 
 .input-block
@@ -244,6 +244,21 @@ button
     height 16px
     background url('img/close.png') no-repeat
     cursor pointer
+
+
+@media only screen and (max-width: 480px)
+  form
+    width 100%
+    margin auto
+    padding-left 0
+    padding-right 0
+    text-align center
+  button
+    margin auto
+  .input-block
+    width auto
+  label
+    width auto
 
 select
   background $white

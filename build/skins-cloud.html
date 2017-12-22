@@ -6,11 +6,12 @@
     <title>pay_form.page.title</title>
   <link href="skins-cloud.css" rel="stylesheet"></head>
   <body>
-    <h1 class="header"></h1>
+    <h1 class="header">Enter your Credit Card details:</h1>
     <div class="decline"><span class="close"></span>
       <p class="decline-title"></p>
       <p class="decline-text"></p>
     </div>
+    <div class="card-brands"><i class="verve"></i><i class="visa"></i><i class="master-card"></i><i class="maestro"></i><i class="american-express"></i><i class="jcb"></i><i class="diners-club"></i><i class="discover"></i><i class="aura"></i><i class="elo"></i><i class="hiper-card"></i></div>
     <form novalidate="true" name="pay_form" action="http://localhost:3000">
       <div class="card_number">
         <label for="card_number-input">Card number</label>
@@ -68,7 +69,6 @@
       <input id="pay_form_checkSum" type="hidden" name="pay_form[checkSum]" value="9d3101821da39b5e9064ac0fb45c6f035767f95b">
       <button>Pay</button><span class="cost"></span>
     </form><input type="hidden" id="signedpay-purchase-status-url" value="{{ url('form_status', {"token": order.payFormToken}) }}" />
-    <div class="card-brands"><i class="verve"></i><i class="visa"></i><i class="master-card"></i><i class="maestro"></i><i class="american-express"></i><i class="jcb"></i><i class="diners-club"></i><i class="discover"></i><i class="aura"></i><i class="elo"></i><i class="hiper-card"></i></div>
     <div class="secure-info"></div>
     <script>
       function handleInputFocus(focus) {
